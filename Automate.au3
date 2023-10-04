@@ -50,9 +50,9 @@ EndSelect
 if WinExists ($pintitle, "") Then
 	WinActivate ($pintitle,"")
 	sleep (100) ;wait 0.1 seconds
-	send ($stringvalue)
-	send ($password)
-	send ("{ENTER}")
+	send ($startingvalue) ; send initial value (A or 0)
+	send ($stringvalue)   ; send incremental code
+	send ("{ENTER}")      ; Hit Enter to test.
 	sleep (100) ;wait 0.1 seconds
 	
 	; write to log in case the app stops early. You can see which value was last tested and update the app to start from that incread of from beginning.
