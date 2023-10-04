@@ -52,7 +52,7 @@ if WinExists ($pintitle, "") Then
 	sleep (100) ;wait 0.1 seconds
 	send ($stringvalue)   ; send incremental code
 	send ("{ENTER}")      ; Hit Enter to test.
-	sleep (100) ;wait 0.1 seconds
+	; sleep (100) ;wait 0.1 seconds
 	
 	; write to log in case the app stops early. You can see which value was last tested and update the app to start from that incread of from beginning.
 	WriteErrorLog ($stringvalue)
@@ -64,7 +64,7 @@ If WinExists ($errortitle,"") Then
 	WinActivate ($errortitle,"")
 	sleep (100) ;wait 0.1 seconds
 	send ("{ENTER}")
-	sleep (100) ;wait 0.1 seconds
+	; sleep (100) ;wait 0.1 seconds
 EndIf
 
 If WinExists ($connected,"") Then
