@@ -4,18 +4,27 @@
 ; Set the Escape hotkey to terminate the script.
 HotKeySet("{ESC}", "_Terminate")
 
+; This app monitors the Automation Direct 
+; Made for https://www.automationdirect.com/adc/shopping/catalog/retired_products/programmable_controllers/d2-240 but other PLC units may work as well.
+; Requires DirectSoft https://support.automationdirect.com/demos.html
+
+; Windows title to enter password
 $pintitle = "Enter Password"
+
+; Window title if password is incorrect
 $errortitle = "Error!"
+
+; Window title if passowrd is correct
 $connected = "Connecting"
 
 FindPassword ()
 
 Func FindPassword ()
 
-; Local $realpassword = A1234567 ; this is the actual pwd
+; Starting value can be either A or 0, change this to suit your needs.
 Local $startingvalue = "A"
-Local $password = 0000000        ; starting password
-Local $finalpassword = 9999999  ; this it the last password to try.
+Local $password = 0000000        ; starting password. If you know the password to have a different starting value you can add here. Otherwise the default will check all possible options.
+Local $finalpassword = 9999999   ; this it the last password to try.
 
 While $password <= $finalpassword
 
@@ -37,7 +46,6 @@ Select
 	Case $password < 10000000
 		$stringvalue = $password
 EndSelect
-	
 
 if WinExists ($pintitle, "") Then
 	WinActivate ($pintitle,"")
@@ -47,6 +55,7 @@ if WinExists ($pintitle, "") Then
 	send ("{ENTER}")
 	sleep (100) ;wait 0.1 seconds
 	
+	; write to log in case the app stops early. You can see which value was last tested and update the app to start from that incread of from beginning.
 	WriteErrorLog ($stringvalue)
 	
 	; increase PIN counter
