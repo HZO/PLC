@@ -32,25 +32,24 @@ While $password <= $finalpassword
 $stringvalue = string($password)
 Select
 	Case $password < 10
-		$stringvalue = "000000"&$password
+		$stringvalue = $startingvalue&"000000"&$password
 	Case $password < 100
-		$stringvalue = "00000"&$password
+		$stringvalue = $startingvalue&"00000"&$password
 	Case $password < 1000
-		$stringvalue = "0000"&$password
+		$stringvalue = $startingvalue&"0000"&$password
 	Case $password < 10000
-		$stringvalue = "000"&$password
+		$stringvalue = $startingvalue&"000"&$password
 	Case $password < 100000
-		$stringvalue = "00"&$password
+		$stringvalue = $startingvalue&"00"&$password
 	Case $password < 1000000
-		$stringvalue = "0"&$password
+		$stringvalue = $startingvalue&"0"&$password
 	Case $password < 10000000
-		$stringvalue = $password
+		$stringvalue = $startingvalue&$password
 EndSelect
 
 if WinExists ($pintitle, "") Then
 	WinActivate ($pintitle,"")
 	sleep (100) ;wait 0.1 seconds
-	send ($startingvalue) ; send initial value (A or 0)
 	send ($stringvalue)   ; send incremental code
 	send ("{ENTER}")      ; Hit Enter to test.
 	sleep (100) ;wait 0.1 seconds
