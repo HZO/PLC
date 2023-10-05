@@ -4,10 +4,13 @@
 #AutoIt3Wrapper_Res_Fileversion=1.0.0.1
 #AutoIt3Wrapper_Res_Fileversion_AutoIncrement=y
 #AutoIt3Wrapper_Res_ProductName=Automate_Faster
-#AutoIt3Wrapper_Res_ProductVersion=1.0
+#AutoIt3Wrapper_Res_ProductVersion=1.1
 #AutoIt3Wrapper_Res_CompanyName=HZO
 #AutoIt3Wrapper_Res_SaveSource=y
 #AutoIt3Wrapper_Res_Language=1033
+#AutoIt3Wrapper_Run_Tidy=y
+#Tidy_Parameters=/rel
+#AutoIt3Wrapper_Run_Au3Stripper=y
 #EndRegion ;**** Directives created by AutoIt3Wrapper_GUI ****
 #include <MsgBoxConstants.au3>
 #include <File.au3>
