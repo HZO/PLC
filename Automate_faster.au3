@@ -61,10 +61,10 @@ EndSelect
 
 if WinExists ($pintitle, "") Then
 	WinActivate ($pintitle,"")
-	; sleep (100) ;wait 0.1 seconds
+
 	send ($stringvalue)   ; send incremental code
 	send ("{ENTER}")      ; Hit Enter to test.
-	; sleep (100) ;wait 0.1 seconds
+	sleep (10) ;wait 0.01 seconds
 
 	; write to log in case the app stops early. You can see which value was last tested and update the app to start from that incread of from beginning.
 	if Mod ($password, $logvalue) = 0 Then
@@ -76,9 +76,9 @@ if WinExists ($pintitle, "") Then
 EndIf
 If WinExists ($errortitle,"") Then
 	WinActivate ($errortitle,"")
-	; sleep (100) ;wait 0.1 seconds
+
 	send ("{ENTER}")
-	; sleep (100) ;wait 0.1 seconds
+
 EndIf
 
 If WinExists ($connected,"") Then
